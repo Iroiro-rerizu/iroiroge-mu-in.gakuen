@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームタイトル</title>
+    <style>
+        @import url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlURgxyR2wL5JNan6N2jRZAOzSfZLEK-Jljw&s');
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            color: white;
+            font-family: 'PixelMplus10', sans-serif;
+        }
+        .Title-Content {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url('タイトル画面画像.png') no-repeat center center/cover;
+        }
+        .screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: pink;
+            animation: blink 1s infinite alternate;
+        }
+        .loading-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: ;
+            animation: bounce 1s infinite alternate;
+            background-color: #00ccff;
+        }
+        h1, p {
+            text-shadow: 2px 2px 4px #fff;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXQrmK8g3mzbJ8iVxaNPs%2FfkMGsD9a4IsfhbNpVeEC81D7YKGk498VC5lJ3PAeqvNsffJZe0nnT%2BYciKfQfYGGqHSUFohaa27VCEgPwyQIks1Cso%2FX4Yp82gvgUjPckx%2FV5vRW3OFTnrcFdscWVcgZzCjhLhIbQvDQ%2BVG5oIuEcwFksdxJq6T4f7OY0A7T2kCf6SQiAkAiBxYZLJVcclyYSzhI%2FkNaCmJwLz16gknxlVAjA%2FG4yOC2he7JTkl7Ys70VR7hAOZrxsLMhtwGrbidFXTgw4eeABrZ1EYnkD9coprlGTmNmSoM7S4YHPpwstCav78gmS2t132%2BSMOp2Es%2FlgiIxQoL%2Bno4r7bNjnKdN3K3O%2B17JjKTQtZCyPnuvxazF27CGqyEl1jLEc9KzLMwed2KUhTasFgsDtT287EtE6xrxix4Bh46XbfsGgDM3Gtlw6n3R3o8Lo22vrPNSF9SiMbUtiDWzQIU4vZvtFjDr05GVODswUXiv80A0xL9vlH8k1CN7zSzWzGGlEo2olf%2B1MTu0Y4fKJjR5Jx9Z8JqAy4tNXKozP0glDG3FTBiPtp7EM6rxKi%2BURkGdox2HlQ%3D%3D&allow_caching=true&sz=w512') no-repeat center center/cover;
+        }
+        .character {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('キャラクター.png') no-repeat center center/contain;
+        }
+        .ui-menu {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .ui1-button {
+            position: relative;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            color: #ff6633;
+            background: url('ガチャ.png') no-repeat center center/contain;
+        }
+.ui2-button {
+            position: relative;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            color: #ccff33;
+            background: url('メンバー.png') no-repeat center center/contain;
+        }
+.ui3-button {
+            position: relative;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            color: #ff3366;
+            background: url('ストーリー.png') no-repeat center center/contain;
+        }
+.ui4-button {
+            position: relative;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            color: #cc33ff;
+            background: url('マイページ.png') no-repeat center center/contain;
+}
+.ui5-button {
+            position: relative;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            color: #33ccff;
+            background: url('ゲーム.png') no-repeat center center/contain;
+}
+  dialog {
+            transition:
+                opacity 2s,
+                display 2s allow-discrete;
+            opacity: 0;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        dialog[open] {
+            opacity: 1;
+        }
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+  <div class="Title-Content">
+        <div class="character" style="left: 50px; top: 300px;"></div>
+        <div class="character" style="left: 200px; top: 300px;"></div>
+        <div class="character" style="left: 350px; top: 300px;"></div>
+    </div>
+    <div id="titleScreen" class="screen">
+        <h1>タイトル</h1>
+        <h1>サブ</h1>
+        <p>画面を押して開始</p>
+    </div>
+    <div id="loadingScreen" class="screen hidden">
+        <div class="loading-icon"></div>
+        <p class="loading-text">ロード中...</p>
+    </div>
+    <div id="gameScreen" class="screen hidden">
+        <body>
+    <div class="game-container">
+        <div class="character" style="left: 50px; top: 300px;"></div>
+        <div class="character" style="left: 200px; top: 300px;"></div>
+        <div class="character" style="left: 350px; top: 300px;"></div>
+        
+      
+      <div class="ui-menu">
+            <button onclick="document.getElementById('modal1').showModal();"　div class="ui1-button">ガチャ</button>
+        <dialog id="modal1">
+            <h1>ガチャを選択してください</h1>
+            <a href="https://nsa.pref.nara.jp/sdt/">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="ガチャ1" width="200">
+        </a>
+        
+            <button onclick="document.getElementById('modal1').close();">もどる</button>
+        </dialog>
+            <button onclick="document.getElementById('modal2').showModal();"　div class="ui2-button">登場キャラ</button>
+        <dialog id="modal2">
+            <h1>どのキャラを調べますか</h1>
+            <a href="https://nsa.pref.nara.jp/sdt/">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="キャラ1" width="200">
+        </a>
+        
+            <button onclick="document.getElementById('modal2').close();">もどる</button>
+        </dialog>
+            <button onclick="document.getElementById('modal3').showModal();"　div class="ui3-button">ストーリー</button>
+        <dialog id="modal3">
+            <h1>ストーリーを選択してください</h1>
+            <a href="https://nsa.pref.nara.jp/sdt/">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="ストーリー画像1" width="200">
+        </a>
+        
+            <button onclick="document.getElementById('modal3').close();">もどる</button>
+        </dialog>
+            <button onclick="document.getElementById('modal4').showModal();"　div class="ui4-button">マイページ</button>
+        <dialog id="modal4">
+            <h1>好きなページを選択してください</h1>
+            <a href="https://nsa.pref.nara.jp/sdt/">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="好きなページ画像1" width="200">
+        </a>
+        
+            <button onclick="document.getElementById('modal4').close();">もどる</button>
+        </dialog>
+            <button onclick="document.getElementById('modal5').showModal();"　div class="ui5-button">ゲーム</button>
+        <dialog id="modal5">
+          <iframe src="https://rerizu2.github.io/ge-musenntaku/ゲーム選択.html" width="100%" height="600" style="border: none; border-radius: 10px;"></iframe>
+
+            
+</body>
+    </div>
+    <script>
+        function transitionScreens(hideId, showId) {
+            document.getElementById(hideId).classList.add('hidden');
+            setTimeout(() => {
+                document.getElementById(hideId).style.display = 'none';
+                document.getElementById(showId).style.display = 'flex';
+                setTimeout(() => {
+                    document.getElementById(showId).classList.remove('hidden');
+                }, 50);
+            }, 1000);
+        }
+        
+        document.getElementById('titleScreen').addEventListener('click', function() {
+            transitionScreens('titleScreen', 'loadingScreen');
+            setTimeout(() => {
+                transitionScreens('loadingScreen', 'gameScreen');
+            }, 5000); // 2秒のロード時間
+        });
+    </script>
+</body>
+</html>
