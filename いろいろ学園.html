@@ -509,6 +509,11 @@
                 transitionScreens('loadingScreen', 'gameScreen');
             }, 5000); // 2秒のロード時間
         });
+        if (screen.orientation && screen.orientation.lock) {
+    screen.orientation.lock("landscape").catch(function(error) {
+        console.error("向きの変更に失敗しました:", error);
+    });
+}
     </script>
 </body>
 </html>
