@@ -2,518 +2,386 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲームタイトル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>幻想クロニクル - ULTIMATE INTEGRATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('data:image/png;base64,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');
-        body {
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-            color: white;
-            font-family: 'PixelMplus10', sans-serif;
+        :root {
+            --pro-teal: #33ffcc; --pro-pink: #ff3399; --glass: rgba(0, 0, 0, 0.85);
+            --border: rgba(255, 255, 255, 0.3); --verify: #1da1f2;
         }
-        .Title-Content {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: url('https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWfFnKr4qvgAle1J1pP1FfIGsc%2F88a1LtKETBqvTtSdmdaiAJVaVOSbici1iK75s7BiK01jXNMJXzZNhSxfNTwynHv0uUmjhbR7oviBMAc%2Bn4OCyUVZTx6MDhSVmzJUzgh%2Frr%2FJtPDm8rk21WHjWtRajC9yeTI9MeVwgN3ykfmUTmSgT5N2VmC0jCexjBUDNAe69ToMhC7H70NAPwrJ2yMjtNsX%2BxLHq9MdSQ9FonjRtaJtb8bIOaHQpGjoBH8UkABzqPNu56NvYKyDRVdn8Pdg2DcyPJ%2BLZcA1%2FdD7jIjpAqUSNkGoXc%2B2%2FP5zVJowK%2F2IwGAzAsY21lXNQx7MmEYTQxKZfy8Zl7jEBsvPjhPa32Z6e6u94d%2FeirsZ3sg7ddcagnW%2FNjU3QsmcW6wr3rs%2BMLRZvRZxO5P4ZxqxtFqoJTwPCcI0r0c2CUpR%2BEJmzLJ0eBM5IUjtXPlm%2BW7MBSey9R25wO5LXyhpU22DPqs3HYxo6VwnTEW87rHY2NAOweFECn5RACNMbpnLWTjv8yY1Bc%2BnE0T9Bw%2BpDOjjtn1mJlJbDJLqSFcxbBV6NQUhLTTncDPSu2dBYkgSXt7IqYSGuuiVXYLZ%2FDJQVEfUOOo%3D&sz=w1920-h1200&auditContext=forDisplay') no-repeat center center/cover;
-        }
-        .screen {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            opacity: 1;
-            transition: opacity 1s ease-in-out;
-        }
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .loading-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: pink;
-            animation: blink 1s infinite alternate;
-        }
-        .loading-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: ;
-            animation: bounce 1s infinite alternate;
-            background-color: #00ccff;
-        }
-        h1, p {
-            text-shadow: 2px 2px 4px #fff;
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-20px); }
-        }
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-        .game-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: url('https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXQrmK8g3mzbJ8iVxaNPs%2FfkMGsD9a4IsfhbNpVeEC81D7YKGk498VC5lJ3PAeqvNsffJZe0nnT%2BYciKfQfYGGqHSUFohaa27VCEgPwyQIks1Cso%2FX4Yp82gvgUjPckx%2FV5vRW3OFTnrcFdscWVcgZzCjhLhIbQvDQ%2BVG5oIuEcwFksdxJq6T4f7OY0A7T2kCf6SQiAkAiBxYZLJVcclyYSzhI%2FkNaCmJwLz16gknxlVAjA%2FG4yOC2he7JTkl7Ys70VR7hAOZrxsLMhtwGrbidFXTgw4eeABrZ1EYnkD9coprlGTmNmSoM7S4YHPpwstCav78gmS2t132%2BSMOp2Es%2FlgiIxQoL%2Bno4r7bNjnKdN3K3O%2B17JjKTQtZCyPnuvxazF27CGqyEl1jLEc9KzLMwed2KUhTasFgsDtT287EtE6xrxix4Bh46XbfsGgDM3Gtlw6n3R3o8Lo22vrPNSF9SiMbUtiDWzQIU4vZvtFjDr05GVODswUXiv80A0xL9vlH8k1CN7zSzWzGGlEo2olf%2B1MTu0Y4fKJjR5Jx9Z8JqAy4tNXKozP0glDG3FTBiPtp7EM6rxKi%2BURkGdox2HlQ%3D%3D&allow_caching=true&sz=w512') no-repeat center center/cover;
-        }
-        .character {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('キャラクター.png') no-repeat center center/contain;
-        }
-        .ui-menu {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-        }
-        .ui1-button {
-            position: relative;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            color: #ff6633;
-            background: url('ガチャ.png') no-repeat center center/contain;
-        }
-.ui2-button {
-            position: relative;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            color: #ccff33;
-            background: url('メンバー.png') no-repeat center center/contain;
-        }
-.ui3-button {
-            position: relative;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            color: #ff3366;
-            background: url('ストーリー.png') no-repeat center center/contain;
-        }
-.ui4-button {
-            position: relative;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            color: #cc33ff;
-            background: url('マイページ.png') no-repeat center center/contain;
-}
-.ui5-button {
-            position: relative;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            padding: 10px;
-            color: #33ccff;
-            background: url('ゲーム.png') no-repeat center center/contain;
-}
-  dialog {
-            transition:
-                opacity 2s,
-                display 2s allow-discrete;
-            opacity: 0;
-            border: none;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        dialog[open] {
-            opacity: 1;
-        }
-        dialog::backdrop {
-            background: rgba(0, 0, 0, 0.5);
-        }
+        body, html { margin: 0; padding: 0; overflow: hidden; background: #000; font-family: 'Noto Sans JP', sans-serif; color: #fff; height: 100vh; width: 100vw; touch-action: manipulation; }
+        
+        /* 背景装飾 */
+        .bg-sekai { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover; z-index: -1; filter: brightness(0.4); pointer-events: none; }
+        .bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 0%, #000 100%); z-index: -1; pointer-events: none; }
+
+        /* キャラクター装飾（浮遊） */
+        .char-original { position: absolute; width: 90px; height: 90px; border-radius: 24px; border: 3px solid #fff; background: var(--glass); backdrop-filter: blur(10px); animation: float 4s infinite ease-in-out; z-index: 1; box-shadow: 0 0 25px var(--pro-teal); pointer-events: none; opacity: 0.3; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-25px) rotate(8deg); } }
+
+        /* スクリーン管理 */
+        .screen { position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1); z-index: 100; box-sizing: border-box; padding: 20px; }
+        .hidden { display: none !important; opacity: 0; pointer-events: none; }
+
+        /* プロセカ風ボタン */
+        .btn-pro { position: relative; background: #fff; color: #111; border: none; padding: 16px 40px; border-radius: 4px; font-weight: 900; cursor: pointer; transition: 0.2s; transform: skewX(-15deg); box-shadow: 5px 5px 0 var(--pro-teal); z-index: 10000; font-family: 'Montserrat', sans-serif; margin: 12px; text-transform: uppercase; text-align: center; width: 85%; max-width: 300px; font-size: 1.1rem; }
+        .btn-pro span { display: inline-block; transform: skewX(15deg); pointer-events: none; }
+        .btn-pro:active { transform: skewX(-15deg) translate(2px, 2px); box-shadow: 0 0 0 var(--pro-teal); }
+        .btn-pro.pink { box-shadow: 5px 5px 0 var(--pro-pink); background: var(--pro-pink); color: #fff; }
+
+        /* 認証済みバッジ */
+        .badge-verify { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: linear-gradient(135deg, #1da1f2, #0e71c8); color: #fff; border-radius: 50%; font-size: 10px; margin-left: 8px; vertical-align: middle; border: 1.5px solid #fff; box-shadow: 0 0 8px rgba(29, 161, 242, 0.6); font-weight: bold; }
+        .badge-verify::after { content: '✔'; }
+
+        /* UI要素 */
+        .header-minimal { position: absolute; top: 15px; left: 15px; display: flex; align-items: center; gap: 10px; z-index: 200; }
+        .av-mini { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; overflow: hidden; background: #222; cursor: pointer; }
+        .iro-coin-disp { margin-left: 10px; font-weight: 900; color: var(--pro-teal); text-shadow: 0 0 15px var(--pro-teal); font-size: 1.2rem; }
+        
+        .main-console-text { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 10vw, 5.5rem); font-weight: 900; letter-spacing: 12px; color: #fff; opacity: 0.7; pointer-events: none; text-align: center; }
+
+        .nav-container { position: absolute; bottom: 25px; display: flex; gap: 10px; width: 95%; max-width: 900px; z-index: 300; justify-content: center; }
+        .nav-card { flex: 1; background: rgba(0,0,0,0.7); border: 1.5px solid #444; padding: 20px 5px; border-radius: 14px; cursor: pointer; text-align: center; font-weight: 900; font-size: 0.8rem; color: #fff; transition: 0.2s; white-space: nowrap; }
+        .nav-card.main { background: var(--pro-pink); border: none; box-shadow: 0 0 25px rgba(255,51,153,0.5); }
+
+        /* ボトムシート */
+        .bottom-sheet { position: fixed; bottom: -110%; left: 0; width: 100%; height: 94%; background: #0a0b12; border-radius: 32px 32px 0 0; z-index: 50000; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; color: #fff; border-top: 1px solid var(--border); }
+        .bottom-sheet.open { bottom: 0; }
+        .sheet-content { padding: 25px; padding-bottom: 140px; max-width: 800px; margin: 0 auto; }
+
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 14px; }
+        .member-card { position: relative; background: rgba(255,255,255,0.08); border-radius: 16px; padding: 12px; border: 1.2px solid rgba(255,255,255,0.2); text-align: center; cursor: pointer; }
+        .member-card img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; border: 2px solid #fff; }
+        .count-badge { position: absolute; top: 6px; right: 6px; background: var(--pro-pink); color: #fff; font-size: 0.7rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; border: 1.5px solid #fff; z-index: 10; }
+
+        .history-item { background: rgba(255,255,255,0.05); padding: 14px; border-radius: 12px; margin-bottom: 10px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; border-left: 5px solid #555; }
+        .student-id-card { background: #fff; color: #333; border-radius: 20px; padding: 25px; border: 4px solid #444; max-width: 360px; margin: 20px auto; }
+        .student-input { background: none; border: none; border-bottom: 2px solid #333; width: 100%; font-size: 1.2rem; padding: 12px 0; margin-bottom: 20px; font-weight: bold; outline: none; }
+
+        #gameLayer { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: none; z-index: 10000; background: #000; }
+        #gameFrame { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
-  <div class="Title-Content">
-        <div class="character" style="left: 50px; top: 300px;"></div>
-        <div class="character" style="left: 200px; top: 300px;"></div>
-        <div class="character" style="left: 350px; top: 300px;"></div>
+
+    <div class="bg-sekai"></div>
+    <div class="bg-overlay"></div>
+    <div id="floatChars"></div>
+
+    <div id="sheetOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:49000;display:none;backdrop-filter:blur(5px);" onclick="closeAllSheets()"></div>
+
+    <!-- ポーズメニュー -->
+    <div id="mobilePauseBtn" style="position:fixed;top:15px;right:15px;width:45px;height:45px;background:var(--glass);border:1.5px solid #fff;border-radius:50%;display:none;z-index:15000;justify-content:center;align-items:center;font-weight:900;cursor:pointer;color:#fff;" onclick="showPauseMenu()">II</div>
+    <div id="pauseOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:60000;display:none;flex-direction:column;justify-content:center;align-items:center;">
+        <h1 style="font-family: Montserrat; font-size: 3.5rem; color: var(--pro-teal);">PAUSE</h1>
+        <button class="btn-pro" onclick="resumeGame()"><span>再開</span></button>
+        <button class="btn-pro pink" onclick="exitGame()"><span>終了</span></button>
     </div>
+
+    <!-- 1. タイトル画面 -->
     <div id="titleScreen" class="screen">
-        <h1>タイトル</h1>
-        <h1>サブ</h1>
-        <p>画面を押して開始</p>
+        <h1 style="font-family: Montserrat; font-size: clamp(3.5rem, 15vw, 8.5rem); margin: 0; text-shadow: 0 0 40px var(--pro-teal); text-align: center;">GENSOU</h1>
+        <p style="letter-spacing: 14px; font-weight: 900; color: var(--pro-pink); margin-bottom: 60px; text-align: center; font-size: 1.3rem;">COLORFUL STAGE</p>
+        <div id="bootStatus" style="font-size: 0.8rem; color: #888; margin-bottom: 10px;">通信準備中...</div>
+        <button class="btn-pro" onclick="handleLoginClick()"><span>ログイン</span></button>
+        <button class="btn-pro pink" onclick="document.getElementById('modalTransfer').showModal()"><span>データ復元</span></button>
     </div>
-    <div id="loadingScreen" class="screen hidden">
-        <div class="loading-icon"></div>
-        <p class="loading-text">ロード中...</p>
+
+    <!-- 2. 新規登録 -->
+    <div id="registrationScreen" class="screen hidden">
+        <h2 style="font-family: Montserrat; color: var(--pro-teal);">NEW REGISTRATION</h2>
+        <div class="student-id-card">
+            <input type="text" id="regName" class="student-input" placeholder="なまえ（公開）">
+            <input type="password" id="regPass" class="student-input" placeholder="合言葉（復元用）">
+        </div>
+        <button class="btn-pro" onclick="saveRegistration()"><span>作成して開始！</span></button>
     </div>
+
+    <!-- ローディング -->
+    <div id="loadingScreen" class="screen hidden"><p style="color: var(--pro-teal); font-weight: 900; letter-spacing: 5px; font-size: 1.8rem;">同期中...</p></div>
+
+    <!-- 3. ホーム画面 -->
     <div id="gameScreen" class="screen hidden">
-        <body>
-    <div class="game-container">
-        <div class="character" style="left: 50px; top: 300px;"></div>
-        <div class="character" style="left: 200px; top: 300px;"></div>
-        <div class="character" style="left: 350px; top: 300px;"></div>
+        <div class="header-minimal">
+            <div class="av-mini" onclick="openSheet('sheetConfig')"><img id="hAv" src="" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div style="font-size: 1rem; font-weight: 900;"><span id="hName">---</span><span id="hVerified"></span></div>
+            <div class="iro-coin-disp">🪙 <span id="hIroCoin">---</span></div>
+        </div>
         
-      
-      <div class="ui-menu">
-            <button onclick="document.getElementById('modal1').showModal();"　div class="ui1-button">ガチャ</button>
-        <dialog id="modal1">
-            <h1>ガチャを選択してください</h1>
-            <a href="https://nsa.pref.nara.jp/sdt/">
-            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="ガチャ1" width="200">
-        </a>
+        <div style="position: absolute; top: 75px; left: 15px; width: 48px; height: 48px; background: rgba(255,255,255,0.1); border: 2px solid #555; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 300; font-size: 1.5rem;" onclick="openSheet('sheetPresent')">🎁<div id="pBadge" style="position: absolute; top: -4px; right: -4px; width: 20px; height: 20px; background: #ff3366; border-radius: 50%; border: 2px solid #fff; font-size: 0.7rem; display: none; justify-content: center; align-items: center; font-weight: 900;">0</div></div>
+
+        <h1 class="main-console-text">MAIN CONSOLE</h1>
         
-            <button onclick="document.getElementById('modal1').close();">もどる</button>
-        </dialog>
-            <button onclick="document.getElementById('modal2').showModal();"　div class="ui2-button">登場キャラ</button>
-        <dialog id="modal2">
-            <h1>どのキャラを調べますか</h1>
-            <a href="https://nsa.pref.nara.jp/sdt/">
-            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="キャラ1" width="200">
-        </a>
-        
-            <button onclick="document.getElementById('modal2').close();">もどる</button>
-        </dialog>
-            <button onclick="document.getElementById('modal3').showModal();"　div class="ui3-button">ストーリー</button>
-        <dialog id="modal3">
-            <h1>ストーリーを選択してください</h1>
-            <a href="https://nsa.pref.nara.jp/sdt/">
-            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="ストーリー画像1" width="200">
-        </a>
-        
-            <button onclick="document.getElementById('modal3').close();">もどる</button>
-        </dialog>
-            <button onclick="document.getElementById('modal4').showModal();"　div class="ui4-button">マイページ</button>
-        <dialog id="modal4">
-            <h1>好きなページを選択してください</h1>
-            <a href="https://nsa.pref.nara.jp/sdt/">
-            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUmCGLumOoj9f292HCU6aBqJsS7ziii%2Bv1xbIsUF7CAJ0n%2B9J0YkyRU4xVoa0YLBZvd3vHdUoT%2BIvDSS0i8j7hyFctHDOvc1fcNBa9lC3e3ZrSZvMdX5qzdiLYbAWKjFMWqfxHi4J7pjUYnlSi9muzQwjZl5Oalx8HGob1qnOuYZxc2pX3CSoHsurlYEAzNrVwGYIEWTWQa2v53LjTAbtYUAM%2FcvBu98B6XbNURydz7PLC0KBG4oVKv0w%2Fsud6KnqrOcixtjWyAztKUtRBWeCHG2lx85joLqM0JEN9SUkkmLKXOacTBgTcJuihInKsMVkZpe23NdQ8E5tMTXyw6GMi7uSFb4A0VkQgN0tWxNhNxHKUp8s4onRKrYHmJdDZ%2F056pJPAbx5FYnxYtTUGmCaDBgy83jn1nz8pRwv2czumGeqjdDfbXsx5gFjotECLMtFZzCyW8otheSVbIViYFKAuXo2bbKJf7VmwUhYnlbQwrzaRNOU%2FgHt0Ay%2FrAr5SRNJ1ml8idNmx5cgQO15GEhlDFhAHdTfd79m02CcOvO2zNBOXGFmI9Yz7vu3wVrw%3D%3D&allow_caching=true&sz=w512" alt="好きなページ画像1" width="200">
-        </a>
-        
-            <button onclick="document.getElementById('modal4').close();">もどる</button>
-        </dialog>
-            <button onclick="document.getElementById('modal5').showModal();"　div class="ui5-button">ゲーム</button>
-        <dialog id="modal5">
-          <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ゲーム選択</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0d1b2a, #1b263b);
-      color: white;
-    }
-
-    .container {
-      display: flex;
-      height: 100vh;
-    }
-
-    .sidebar {
-      flex: 1;
-      padding: 40px;
-      background-color: #0d1b2a;
-    }
-
-    .sidebar h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .sidebar p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    a.btn-gradient {
-      border-radius: 100vh;
-    }
-
-    .mode-carousel {
-      flex: 2;
-      overflow-x: auto;
-      display: flex;
-      align-items: center;
-      padding: 40px;
-      background-color: #1b263b; /* ← ここを追加！ */
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 10px;
-      width: 200px;
-      text-align: center;
-      transition: transform 0.3s, border 0.3s;
-      cursor: pointer;
-    }
-
-    .card.selected {
-      border: 2px solid #2ec4b6;
-      transform: scale(1.1);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .card p {
-      margin-top: 10px;
-    }
-
-    .mode-carousel::-webkit-scrollbar {
-      display: none;
-    }
-
-    .mode-carousel {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    /* Fancy Button Styles */
-    .btn {
-      --fancy-button-gradient-0: #8d49fd;
-      --fancy-button-gradient-50: #7f56f3;
-      --fancy-button-gradient-100: #5691f3;
-      --fancy-button-inner-shadow-top: rgba(233, 209, 255, 0.2);
-      --fancy-button-inner-shadow-top-lg: rgba(9, 12, 60, 0.1);
-      --fancy-button-inner-shadow-bottom: rgba(137, 222, 246, 0.3);
-      --fancy-button-shine-top: #e9d1ff;
-      --fancy-button-shine-bottom: #adfff9;
-      font-weight: 500;
-      font-size: 15px;
-      line-height: 21px;
-      text-shadow: 0px 0.5px 0.5px rgba(0, 0, 0, 0.2);
-      padding: 0;
-      margin: 0;
-      appearance: none;
-      border: none;
-      outline: none;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      z-index: 1;
-      border-radius: 25px;
-      color: #fff;
-      background-image: linear-gradient(
-        to bottom,
-        var(--fancy-button-gradient-0) 0%,
-        var(--fancy-button-gradient-50) 50%,
-        var(--fancy-button-gradient-100) 100%
-      );
-      box-shadow:
-        0px 4px 12px rgba(9, 12, 60, 0.15),
-        0px 2px 8px rgba(9, 12, 60, 0.15),
-        0px 1px 3px var(--fancy-button-inner-shadow-top-lg),
-        inset 0px 1px 1px var(--fancy-button-inner-shadow-top),
-        inset 0px -1px 3px var(--fancy-button-inner-shadow-bottom);
-    }
-
-    .btn:before,
-    .btn:after {
-      content: "";
-      position: absolute;
-      border-radius: inherit;
-      will-change: transform;
-    }
-
-    .btn:before {
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--fancy-button-shine-top);
-      width: 96px;
-      height: 6px;
-      top: -3px;
-      opacity: 0.6;
-      filter: blur(6px);
-      transition: opacity 0.25s;
-    }
-
-    .btn:after {
-      inset: 0;
-      background-size: cover;
-      z-index: 2;
-      opacity: 0.3;
-      mix-blend-mode: overlay;
-      pointer-events: none;
-    }
-
-    .btn span {
-      display: block;
-      padding: 12px 24px;
-      border-radius: inherit;
-      overflow: hidden;
-      position: relative;
-      background-image: linear-gradient(
-        to bottom,
-        var(--fancy-button-shine-top),
-        transparent 8px
-      );
-      background-position: 0 -6px;
-      background-repeat: no-repeat;
-      z-index: 1;
-    }
-
-    .btn span:before,
-    .btn span:after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      background-color: var(--fancy-button-shine-bottom);
-      transition: opacity 0.25s, transform 0.25s;
-      will-change: transform;
-    }
-
-    .btn span:before {
-      width: 92px;
-      height: 8px;
-      bottom: -4px;
-      opacity: 0.75;
-      filter: blur(6px);
-    }
-
-    .btn span:after {
-      width: 112px;
-      height: 1px;
-      bottom: 0;
-      opacity: 0.9;
-      filter: blur(1px);
-    }
-
-    .btn:hover span:before {
-      opacity: 0.8;
-      transform: translateX(-50%) scale(1.25);
-    }
-
-    .btn:hover span:after {
-      opacity: 1;
-    }
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <h1>ゲーム選択画面</h1>
-      <p>あなたが好きなゲームを選んでください。</p>
+        <nav class="nav-container">
+            <div class="nav-card" onclick="openSheet('sheetFriend')">フレンド</div>
+            <div class="nav-card" onclick="launchGachaUI()">ガチャ</div>
+            <div class="nav-card main" onclick="transition('gameScreen', 'questScreen'); loadGameList();">クエスト</div>
+            <div class="nav-card" onclick="openSheet('sheetMember')">メンバー</div>
+            <div class="nav-card" onclick="openSheet('sheetConfig')">設定</div>
+        </nav>
     </div>
 
-    <div class="mode-carousel">
-      <div class="carousel-track">
-
-        <div class="card selected">
-          <img src="https://via.placeholder.com/200x120?text=クラシック" alt="クラシックモード">
-          <p>コイン落とし</p>
-          <button class="btn">
-            <span>Get started</span>
-          </button>
+    <!-- ボトムシート群 -->
+    <div id="sheetMember" class="bottom-sheet"><div class="sheet-content"><h2 style="color:var(--pro-teal); font-family: Montserrat;">MY MEMBERS</h2><div id="memberListContainer" class="member-grid"></div></div></div>
+    
+    <div id="sheetMemberDetail" class="bottom-sheet">
+        <div class="sheet-content" style="text-align: center;">
+            <div id="memberDetailContent"></div>
+            <div id="giftSelectionArea" style="display:none; margin-top:25px;">
+                <h3 style="color:var(--pro-pink);">贈るフレンドを選択</h3>
+                <div id="giftFriendList" style="background:#f8f8f8; color:#333; padding:15px; border-radius:24px; max-height:350px; overflow-y:auto; border: 3px solid #ddd;"></div>
+            </div>
+            <button class="btn-pro pink" id="startGiftBtn"><span>フレンドに贈る</span></button><br>
+            <button class="btn-pro" onclick="closeSheet('sheetMemberDetail')"><span>戻る</span></button>
         </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/200x120?text=RPG" alt="RPG">
-          <p>RPG</p>
-          <button class="btn">
-            <span>Get started</span>
-          </button>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/200x120?text=fps" alt="fps">
-          <p>fps</p>
-          <button class="btn">
-            <span>Get started</span>
-          </button>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/200x120?text=3Dホラーゲーム" alt="3Dホラーゲーム">
-          <p>3Dホラーゲーム</p>
-          <button class="btn">
-            <span>Get started</span>
-          </button>
-        </div>
-
-        <div class="card">
-          <img src="https://via.placeholder.com/200x120?text=ゾーンウォーズ" alt="ゾーンウォーズ">
-          <p>ゾーンウォーズ</p>
-          <button class="btn">
-            <span>Get started</span>
-          </button>
-        </div>
-
-      </div>
     </div>
-  </div>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelector('.selected')?.classList.remove('selected');
-        card.classList.add('selected');
-      });
-    });
-  </script>
-</body>
-</html>
-</body>
+    <div id="sheetPresent" class="bottom-sheet"><div class="sheet-content"><h2 style="color:var(--pro-teal); font-family: Montserrat;">PRESENTS</h2><div id="pListContainer"></div><h2 style="color:var(--pro-pink); font-family: Montserrat; margin-top:50px;">HISTORY</h2><div id="historyContainer"></div></div></div>
+    
+    <div id="sheetConfig" class="bottom-sheet">
+        <div class="sheet-content" style="text-align: center;">
+            <div class="student-id-card">
+                <img id="mAv" style="width:120px;height:120px;border:4px solid #333;object-fit:cover;background:#eee;cursor:pointer;border-radius:50%;" onclick="document.getElementById('fileIn').click()">
+                <p>ID: <span id="myIdDisplay">---</span></p>
+                <input type="text" id="nIn" placeholder="なまえを更新" class="student-input">
+                <input type="password" id="pIn" placeholder="合言葉を更新" class="student-input">
+                <input type="file" id="fileIn" style="display:none" accept="image/*" onchange="uploadIcon(this)">
+            </div>
+            <br><button class="btn-pro" style="width:100%" onclick="saveSettings()"><span>保存</span></button>
+        </div>
     </div>
+
+    <div id="sheetFriend" class="bottom-sheet">
+        <div class="sheet-content">
+            <h2 style="color:var(--pro-pink); font-family: Montserrat;">FRIENDS</h2>
+            <div id="reqList" style="margin-bottom: 25px;"></div>
+            <div id="fList"></div>
+            <div style="margin-top:40px; display:flex; gap:10px;">
+                <input type="text" id="fIdIn" placeholder="10桁ID検索" style="flex:1; padding:16px; border-radius:12px; border:none; color:#000; font-weight:bold;">
+                <button class="btn-pro pink" style="width:auto; padding:15px 30px; margin:0;" onclick="sendReq()"><span>申請</span></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="questScreen" class="screen hidden"><h2 style="font-size: 3rem; color: var(--pro-teal); font-family: Montserrat;">QUEST SELECT</h2><div id="gameListContainer" style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;width:100%;padding:20px;box-sizing:border-box;"></div><button class="btn-pro" onclick="transition('questScreen', 'gameScreen')">戻る</button></div>
+
+    <dialog id="modalTransfer" style="background:#111;color:#fff;border:none;border-radius:24px;padding:35px;width:90%;max-width:340px;box-shadow: 0 0 50px rgba(255,51,153,0.4);"><input type="text" id="tIdIn" placeholder="ID" style="width:100%; padding:15px; margin-bottom:12px; border-radius:8px;"><input type="password" id="tPassIn" placeholder="合言葉" style="width:100%; padding:15px; border-radius:8px;"><br><br><button class="btn-pro pink" style="width:100%;margin:0;" onclick="executeTransfer()"><span>復元実行</span></button></dialog>
+
+    <div id="gameLayer"><iframe id="gameFrame" src="about:blank"></iframe></div>
+
     <script>
-        function transitionScreens(hideId, showId) {
-            document.getElementById(hideId).classList.add('hidden');
-            setTimeout(() => {
-                document.getElementById(hideId).style.display = 'none';
-                document.getElementById(showId).style.display = 'flex';
-                setTimeout(() => {
-                    document.getElementById(showId).classList.remove('hidden');
-                }, 50);
-            }, 1000);
-        }
-        
-        document.getElementById('titleScreen').addEventListener('click', function() {
-            transitionScreens('titleScreen', 'loadingScreen');
-            setTimeout(() => {
-                transitionScreens('loadingScreen', 'gameScreen');
-            }, 5000); // 2秒のロード時間
+        // --- 設定 ---
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbxYr7USCbtA8TW6MAB4IcWtfPOB-g-jAeCqVvdmbqHnRn-GlsGotvbB0fVPruGqqlDq/exec'; 
+
+        let myId = localStorage.getItem('gID') || Math.random().toString(36).substring(2, 12).toUpperCase();
+        let iroCoins = parseInt(localStorage.getItem('gCoins')) || 0;
+        let myChars = "", globalCharaPool = {}, friendsData = [], firstSyncDone = false;
+
+        // 背景浮遊演出
+        window.addEventListener('load', async () => {
+            initFloating();
+            try {
+                const res = await fetch(GAS_URL + "?action=getCharaPools");
+                globalCharaPool = await res.json();
+                document.getElementById('bootStatus').innerText = "READY";
+                document.getElementById('bootStatus').style.color = "#33ffcc";
+            } catch(e) { document.getElementById('bootStatus').innerText = "オフライン"; }
         });
-        if (screen.orientation && screen.orientation.lock) {
-    screen.orientation.lock("landscape").catch(function(error) {
-        console.error("向きの変更に失敗しました:", error);
-    });
-}
+
+        function initFloating() {
+            const container = document.getElementById('floatChars');
+            for(let i=0; i<6; i++) {
+                const div = document.createElement('div');
+                div.className = 'char-original';
+                div.style.left = (Math.random() * 85) + '%';
+                div.style.top = (Math.random() * 80) + '%';
+                div.style.animationDelay = (Math.random() * 6) + 's';
+                div.style.opacity = '0.25';
+                container.appendChild(div);
+            }
+        }
+
+        // ログイン・登録
+        async function handleLoginClick() {
+            if(!localStorage.getItem('gName')) transition('titleScreen', 'registrationScreen');
+            else {
+                transition('titleScreen', 'loadingScreen');
+                // POST登録
+                await fetch(GAS_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify({
+                        type: "sync",
+                        id: myId,
+                        name: localStorage.getItem('gName'),
+                        pass: localStorage.getItem('gPass'),
+                        iroCoin: iroCoins || 5000,
+                        chars: ""
+                    })
+                });
+                if(await fetchSync()) {
+                    transition('loadingScreen', 'gameScreen');
+                    setInterval(fetchSync, 15000);
+                } else { alert("同期エラー"); location.reload(); }
+            }
+        }
+
+        async function saveRegistration() {
+            const name = document.getElementById('regName').value.trim();
+            const pass = document.getElementById('regPass').value.trim();
+            if(!name || !pass) return;
+            localStorage.setItem('gID', myId);
+            localStorage.setItem('gName', name); localStorage.setItem('gPass', pass);
+            handleLoginClick();
+        }
+
+        // 同期コア
+        async function fetchSync() {
+            try {
+                const res = await fetch(GAS_URL + "?id=" + myId);
+                const json = await res.json();
+                if(json.result === "success") {
+                    iroCoins = Number(json.iroCoin); localStorage.setItem('gCoins', iroCoins);
+                    document.getElementById('hIroCoin').innerText = iroCoins.toLocaleString();
+                    myChars = json.chars || ""; friendsData = json.friendsData || [];
+                    document.getElementById('hName').innerText = json.name || "USER";
+                    document.getElementById('hVerified').innerHTML = json.isOfficial ? '<span class="badge-verify"></span>' : "";
+                    const avUrl = json.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed="+myId;
+                    document.getElementById('hAv').src = avUrl; document.getElementById('mAv').src = avUrl;
+                    document.getElementById('myIdDisplay').innerText = myId;
+                    
+                    updatePresentUI(json.pendingGifts); 
+                    updateHistoryUI(json.history);
+                    renderMembers();
+                    
+                    if(!firstSyncDone) { document.getElementById('nIn').value = json.name; document.getElementById('pIn').value = json.pass; firstSyncDone = true; }
+                    
+                    document.getElementById('reqList').innerHTML = json.pending ? json.pending.split(',').map(id => `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:#fff;border-radius:12px;margin-bottom:8px;color:#333;"><span>ID: ${id}</span><button onclick="acceptF('${id}')">承認</button></div>`) : "なし";
+                    document.getElementById('fList').innerHTML = friendsData.length ? friendsData.map(f => `<div style="display:flex;justify-content:space-between;padding:15px 0;color:#fff;border-bottom:1px solid #333;"><span>${f.name}${f.isOfficial?'<span class="badge-verify"></span>':''}</span><div><button onclick="sendFriendGift('${f.id}')">🎁</button> <button onclick="removeFriend('${f.id}')">×</button></div></div>`).join('') : "なし";
+                    return true;
+                }
+                return false;
+            } catch(e) { return false; }
+        }
+
+        // ガチャ
+        async function launchGachaUI() {
+            document.getElementById('gameLayer').style.display='block'; document.getElementById('mobilePauseBtn').style.display='flex';
+            const [gDataRes, charPoolRes] = await Promise.all([ fetch(GAS_URL + "?action=getGachaSettings"), fetch(GAS_URL + "?action=getCharaPools") ]);
+            const gData = await gDataRes.json(); const pools = await charPoolRes.json();
+            
+            document.getElementById('gameFrame').srcdoc = `
+            <!DOCTYPE html><html><head><style>
+                body{background:#000;color:#fff;font-family:sans-serif;margin:0;overflow:hidden;}
+                #bg{position:fixed;width:100%;height:100%;background:url('${gData[0].bg}') center/cover;transition:0.6s;filter:brightness(1.1);}
+                .ui{position:relative;z-index:10;height:100vh;padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box;background:linear-gradient(rgba(0,0,0,0.3),transparent,rgba(0,0,0,0.95));}
+                .coin-tag{background:rgba(0,0,0,0.7);padding:10px 22px;border-radius:40px;color:#33ffcc;border:2px solid #33ffcc;font-weight:bold;width:fit-content;font-size:1.2rem;}
+                .sidebar{position:absolute;left:20px;top:100px;display:flex;flex-direction:column;gap:15px;}
+                .tab{width:140px;height:70px;background-size:cover;border:3px solid transparent;border-radius:12px;opacity:0.6;cursor:pointer;}
+                .tab.active{border-color:#ffcc00;opacity:1;transform:translateX(12px);box-shadow: 0 0 20px #ffcc00;}
+                .btn-container{display:flex;flex-direction:column;align-items:flex-end;gap:15px;}
+                .pull-btn{padding:20px 45px;border-radius:15px;border:none;color:#fff;font-weight:900;cursor:pointer;font-size:1.2rem;box-shadow:0 6px 0 rgba(0,0,0,0.4);}
+                .b-1{background:#555;} .b-10{background:linear-gradient(#ff88bb,#ff3399);} .b-100{background:linear-gradient(#ffcc00,#ff6600);}
+                .b-custom{background:linear-gradient(#33ffcc,#00cc99); color:#000;}
+                .custom-box{background:rgba(0,0,0,0.85); padding:10px 20px; border-radius:15px; display:flex; align-items:center; gap:15px; border:1px solid #fff;}
+                .num-btn{width:40px;height:40px;border-radius:50%;border:none;background:#fff;font-weight:bold;cursor:pointer;font-size:1.5rem;}
+                #reveal{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:none;z-index:1000;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;text-align:center;}
+                .rev-img{max-height:70vh;border:5px solid #fff;border-radius:20px;margin-bottom:20px;}
+                #summary{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.98);display:none;z-index:2000;flex-direction:column;align-items:center;justify-content:center;padding:20px;}
+                .summary-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;overflow-y:auto;max-height:70vh;}
+                .summary-card{width:90px;text-align:center;background:rgba(255,255,255,0.1);padding:8px;border-radius:10px;}
+                .summary-card img{width:70px;height:100px;object-fit:cover;border:2px solid #fff;border-radius:6px;}
+            </style></head>
+            <body><div id="bg"></div><div class="ui"><div class="coin-tag">🪙 <span id="c">${iroCoins.toLocaleString()}</span></div><div class="sidebar" id="sb"></div><div style="margin-left:170px;margin-bottom:120px;"><h1 id="gn" style="font-size:3rem;"></h1></div>
+                <div class="btn-container">
+                    <div id="standard-btns" style="display:flex; gap:10px;"></div>
+                    <div class="custom-box">
+                        <button class="num-btn" onclick="chg(-10)">-</button><span id="custVal" style="font-size:1.8rem; font-weight:bold; min-width:60px; text-align:center;">10</span><button class="num-btn" onclick="chg(10)">+</button>
+                        <button class="pull-btn b-custom" onclick="pull(custValNum)">指定枚数引く</button>
+                    </div>
+                </div>
+            </div>
+            <div id="reveal" onclick="next()"><img id="ri" class="rev-img"><h1 id="rn" style="font-size:3.5rem;"></h1><div id="rs" style="color:#ffcc00;font-size:2.5rem;margin-bottom:20px;"></div><p>TAP TO NEXT</p></div>
+            <div id="summary"><h2>RESULT</h2><div id="sg" class="summary-grid"></div><button onclick="location.reload()" style="margin-top:20px;padding:20px 80px;border-radius:40px;font-weight:900;">閉じる</button></div>
+            <script>
+                let coins=${iroCoins}, ps=${JSON.stringify(pools)}, gd=${JSON.stringify(gData)}, res=[], cur=0, custValNum=10;
+                function chg(v){ custValNum=Math.max(1, custValNum+v); document.getElementById('custVal').innerText=custValNum; }
+                function build(idx){
+                    document.getElementById('bg').style.backgroundImage='url('+gd[idx].bg+')'; document.getElementById('gn').innerText=gd[idx].title;
+                    const st=document.getElementById('standard-btns'); st.innerHTML='';
+                    gd[idx].buttons.split(',').forEach(b=>{
+                        let n=parseInt(b); if(isNaN(n))n=1;
+                        const btn=document.createElement('button'); btn.className='pull-btn '+(n>=100?'b-100':(n>=10?'b-10':'b-1'));
+                        btn.innerText=b+'引く'; btn.onclick=()=>pull(n); st.appendChild(btn);
+                    });
+                }
+                function pull(n){
+                    const cost=n*300; if(coins<cost){alert('コイン不足');return;}
+                    coins-=cost; document.getElementById('c').innerText=coins.toLocaleString();
+                    res=[]; let names=[]; let hasS4=false, hasS3=false;
+                    for(let i=0; i<n; i++){
+                        let s=2, r=Math.random()*100;
+                        if(r<3.5) s=4; else if(r<16) s=3;
+                        if(n>=100 && i===n-1 && !hasS4) s=4; 
+                        else if(n>=10 && i===n-1 && !hasS3 && s<3) s=3;
+                        if(s>=4) hasS4=true; if(s>=3) hasS3=true;
+                        const pool=ps['star'+s]; const c=pool[Math.floor(Math.random()*pool.length)];
+                        res.push({...c,rank:s}); names.push(c.name);
+                    }
+                    window.parent.postMessage({type:'gachaPull',value:coins,pulls:n,chars:names.join(',')},'*');
+                    cur=0; show();
+                }
+                function show(){const c=res[cur]; document.getElementById('reveal').style.display='flex'; document.getElementById('ri').src=c.img; document.getElementById('rn').innerText=c.name; document.getElementById('rs').innerText='★'.repeat(c.rank);}
+                function next(){cur++; if(cur<res.length)show(); else{document.getElementById('reveal').style.display='none';const g=document.getElementById('sg');g.innerHTML='';res.forEach(c=>{g.innerHTML+='<div class="summary-card"><img src="'+c.img+'"><br>'+'★'.repeat(c.rank)+'</div>'});document.getElementById('summary').style.display='flex';}}
+                gd.forEach((g,i)=>{ const t=document.createElement('div'); t.className='tab'+(i===0?' active':''); t.style.backgroundImage='url('+g.thumbnail+')'; t.onclick=()=>{build(i); document.querySelectorAll('.tab').forEach((x,j)=>x.classList.toggle('active',i===j))}; document.getElementById('sb').appendChild(t); }); build(0);
+            <\/script></body></html>`;
+        }
+
+        // --- UIヘルパー ---
+        window.addEventListener('message', e => { if(e.data.type === 'gachaPull') { iroCoins = e.data.value; localStorage.setItem('gCoins', iroCoins); document.getElementById('hIroCoin').innerText = iroCoins.toLocaleString(); fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "gachaLog", userId: myId, newCoins: iroCoins, pulls: e.data.pulls, newChars: e.data.chars }) }); } });
+        function transition(h, s) { const cur = document.getElementById(h); const nxt = document.getElementById(s); if(cur) { cur.classList.add('hidden'); setTimeout(() => cur.style.display = 'none', 600); } if(nxt) { nxt.style.display = 'flex'; setTimeout(() => nxt.classList.remove('hidden'), 50); } }
+        function openSheet(id) { document.getElementById('sheetOverlay').style.display = 'block'; document.getElementById(id).classList.add('open'); }
+        function closeSheet(id) { document.getElementById(id).classList.remove('open'); if(!document.querySelector('.bottom-sheet.open')) document.getElementById('sheetOverlay').style.display = 'none'; }
+        function closeAllSheets() { document.getElementById('sheetOverlay').style.display = 'none'; document.querySelectorAll('.bottom-sheet').forEach(s => s.classList.remove('open')); }
+        function showPauseMenu() { document.getElementById('pauseOverlay').style.display = 'flex'; }
+        function resumeGame() { document.getElementById('pauseOverlay').style.display = 'none'; }
+        function exitGame() { location.reload(); }
+        async function loadGameList() { const res = await (await fetch(GAS_URL + "?action=getList")).json(); const container = document.getElementById('gameListContainer'); container.innerHTML = ""; res.forEach(g => { const card = document.createElement('div'); card.className = "nav-card"; card.style.width="140px"; card.style.flex="none"; card.innerHTML = `<b>${g.title}</b>`; card.onclick = () => launchGame(g.id); container.appendChild(card); }); }
+        async function launchGame(id) { document.getElementById('gameLayer').style.display='block'; document.getElementById('mobilePauseBtn').style.display='flex'; const res = await (await fetch(GAS_URL+"?action=getCode&row="+id)).json(); document.getElementById('gameFrame').srcdoc = res.code; }
+        function renderMembers() {
+            const container = document.getElementById('memberListContainer');
+            if(!myChars) { container.innerHTML = "なし"; return; }
+            const counts = {}; myChars.split(',').filter(n=>n!=="").forEach(n => { counts[n] = (counts[n] || 0) + 1; });
+            const master = [...(globalCharaPool.star2||[]), ...(globalCharaPool.star3||[]), ...(globalCharaPool.star4||[])];
+            container.innerHTML = Object.keys(counts).map(name => {
+                const char = master.find(m => m.name === name);
+                return char ? `<div class="member-card" onclick="showMemberDetail('${char.name}')"><div class="count-badge">x${counts[name]}</div><img src="${char.img}"><br><small>${char.name}</small></div>` : "";
+            }).join('');
+        }
+        function showMemberDetail(name) {
+            const master = [...(globalCharaPool.star2||[]), ...(globalCharaPool.star3||[]), ...(globalCharaPool.star4||[])];
+            const char = master.find(m => m.name === name); if(!char) return;
+            let stars = globalCharaPool.star4.some(c=>c.name===name) ? 4 : (globalCharaPool.star3.some(c=>c.name===name) ? 3 : 2);
+            document.getElementById('memberDetailContent').innerHTML = `<img src="${char.img}" style="width:220px;height:280px;object-fit:cover;border:4px solid #fff;border-radius:20px;"><div style="color:#ffcc00;font-size:2rem;margin-top:10px;">${'★'.repeat(stars)}</div><h1>${char.name}</h1>`;
+            document.getElementById('giftSelectionArea').style.display = 'none';
+            document.getElementById('startGiftBtn').onclick = () => {
+                document.getElementById('giftFriendList').innerHTML = friendsData.map(f => `<div onclick="executeMemberGift('${f.id}','${f.name}','${char.name}')" style="padding:15px;border-bottom:1.5px solid #eee;cursor:pointer;font-weight:900;">${f.name} ➔ 贈る</div>`).join('');
+                document.getElementById('giftSelectionArea').style.display = 'block';
+            };
+            openSheet('sheetMemberDetail');
+        }
+        async function executeMemberGift(tid, tn, cn) { if(confirm(`${tn}さんに贈りますか？`)) { await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "friendMemberGift", fromId: myId, fromName: document.getElementById('hName').innerText, toId: tid, charName: cn }) }); alert("贈りました"); closeSheet('sheetMemberDetail'); fetchSync(); } }
+        async function saveSettings() { localStorage.setItem('gName', document.getElementById('nIn').value); localStorage.setItem('gPass', document.getElementById('pIn').value); alert("保存完了"); fetchSync(); closeAllSheets(); }
+        function uploadIcon(input) { if (input.files && input.files[0]) { const r = new FileReader(); r.onload = e => { localStorage.setItem('gAv', e.target.result); document.getElementById('hAv').src = e.target.result; fetchSync(); }; r.readAsDataURL(input.files[0]); } }
+        async function sendReq() { const tid = document.getElementById('fIdIn').value.toUpperCase(); if(tid===myId) return; await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "request", myId: myId, targetId: tid }) }); alert("申請完了"); fetchSync(); }
+        async function acceptF(tid) { await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "accept", myId: myId, targetId: tid }) }); fetchSync(); }
+        async function removeFriend(fid) { if(confirm("解除？")){ await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "removeFriend", myId: myId, targetId: fid }) }); fetchSync(); } }
+        async function sendFriendGift(fid) { const amount = prompt("枚数", "100"); if(!amount || iroCoins < amount) return; iroCoins -= parseInt(amount); await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "friendGift", fromId: myId, fromName: document.getElementById('hName').innerText, toId: fid, amount: amount }) }); fetchSync(); }
+        async function claim(rowId, name) { await fetch(GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ type: "claim", userId: myId, giftRow: rowId }) }); alert(name + " 受取完了"); fetchSync(); }
+        function updatePresentUI(p) { const badge = document.getElementById('pBadge'); const list = document.getElementById('pListContainer'); if(!p || p.length === 0) { list.innerHTML = "なし"; badge.style.display = 'none'; return; } badge.innerText = p.length; badge.style.display = 'flex'; list.innerHTML = p.map(x => `<div style="display:flex;justify-content:space-between;padding:15px;background:rgba(255,255,255,0.1);margin-bottom:10px;"><div><b>${x.name}</b></div><button onclick="claim(${x.row},'${x.name}')">受取</button></div>`).join(''); }
+        function updateHistoryUI(h) { const c = document.getElementById('historyContainer'); if(!h) { c.innerHTML = "なし"; return; } c.innerHTML = h.map(x => `<div style="padding:10px; border-bottom:1px solid #333;">${x.reason} : ${x.coin}</div>`).join(''); }
+        async function executeTransfer() { const id = document.getElementById('tIdIn').value.toUpperCase(); const ps = document.getElementById('tPassIn').value; const res = await (await fetch(GAS_URL + "?id=" + id)).json(); if(res.result === "success" && String(res.pass) === String(ps)) { localStorage.setItem('gID', id); localStorage.setItem('gName', res.name); localStorage.setItem('gPass', res.pass); location.reload(); } else { alert("失敗"); } }
     </script>
 </body>
 </html>
